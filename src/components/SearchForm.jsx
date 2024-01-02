@@ -1,8 +1,16 @@
+import { useGlobalContext } from '../context';
+
 const SearchForm = () => {
+  const { setSearchTerm } = useGlobalContext();
+
   const submitHandler = (e) => {
     e.preventDefault();
+
     const searchValue = e.target.elements.search.value;
-    if (!searchValue) return
+
+    if (!searchValue) return;
+
+    setSearchTerm(searchValue);
   };
 
   return (
