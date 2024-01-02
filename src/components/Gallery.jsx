@@ -21,9 +21,7 @@ const Gallery = () => {
 
   if (isLoading) {
     return (
-      <section className='image-container'>
-        <h4>Loading...</h4>
-      </section>
+        <div className="loading"></div>
     );
   }
 
