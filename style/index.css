@@ -46,7 +46,7 @@ html {
   --borderRadius: 0.5rem;
   --letterSpacing: 1px;
   --transition: 0.3s ease-in-out all;
-  --max-width: 1120px;
+  --max-width: 1200px;
   --fixed-width: 600px;
   --view-width: 90vw;
 
@@ -340,6 +340,23 @@ ul {
   height: 10rem;
 }
 
+.image-link {
+  position: relative;
+}
+
+.image-meta {
+  position: absolute;
+  color: var(--grey-50);
+  bottom: 0;
+  left: 0;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+}
+
 @media (min-width: 768px) {
   .image-container {
     grid-template-columns: 1fr 1fr;
@@ -348,8 +365,30 @@ ul {
 
 @media (min-width: 992px) {
   .image-container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
+}
+
+@media (min-width: 1200px) {
+  .image-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.button-container > span {
+  background-color: var(--primary-500);
+  color: var(--white);
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--borderRadius);
+  cursor: default;
 }
 
 /* * dark theme css */
