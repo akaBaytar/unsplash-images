@@ -34,7 +34,7 @@ html {
   --grey-900: #0f172a;
 
   --black: #222;
-  --white: #fff;
+  --white: #f0f0f0;
   --red-light: #f8d7da;
   --red-dark: #842029;
   --green-light: #d1e7dd;
@@ -50,6 +50,12 @@ html {
   --fixed-width: 600px;
   --view-width: 90vw;
 
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+  --dark-mode-bg-color: var(--black);
+  --dark-mode-text-color: var(--white);
+  --dark-mode-transition: 0.3s background-color ease-in-out, 0.3s color ease-in-out;
+
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -57,11 +63,15 @@ html {
 }
 
 body {
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  transition: var(--dark-mode-transition);
+  line-height: 1;
+  font-weight: 400;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
     'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  line-height: 1;
 }
+
 p {
   margin: 0;
 }
@@ -324,4 +334,10 @@ ul {
   .image-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+/* * dark theme css */
+.dark-theme {
+  --textColor: var(--dark-mode-text-color);
+  --backgroundColor: var(--dark-mode-bg-color);
 }
